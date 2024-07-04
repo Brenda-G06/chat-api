@@ -1,0 +1,30 @@
+{
+  "name": "api-node-mongo",
+  "version": "1.0.0",
+  "description": "descricao",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/server.js",
+    "test": "teste"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brenda-G06/chat-api.git"
+  },
+  "keywords": [
+    "cimol",
+    "api",
+    "chat"
+  ],
+  "author": "brenda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brenda-G06/chat-api/issues"
+  },
+  "homepage": "https://github.com/Brenda-G06/chat-api#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.8.0"
+  }
+}

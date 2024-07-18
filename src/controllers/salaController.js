@@ -1,4 +1,4 @@
-exports.get = async(req,res)=>{
-    const salaModel = require('../models/salaModel')
-    return {"status": "OK", "controller": "sala"};
+exports.get = async function (){
+    const salaModel = require('../models/salaModel');
+    return await salaModel.listarSalas();
 }

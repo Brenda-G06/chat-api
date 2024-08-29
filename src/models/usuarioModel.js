@@ -1,10 +1,15 @@
-const db = require("./db)");
-async function registrarUsuario(nick){
-    return await db.insertOne("usuario", {"nick": nick});
-}
-async function insertOne(collection, objeto){
-    db = await connect();
-    return dbb.collection(collection).insertOne(objeto)
+const db = require("./db"); 
+
+async function registrarUsuario(nick) {
+    return await db.insertOne("usuario", { "nick": nick });
 }
 
-module.exports = {registrarUsuario, insertOne}
+async function sairSala(nick, idSala) {
+    const dbInstance = await db.connect(); 
+    return await dbInstance.collection("usuarios").updateOne(
+        { nick: nick },
+        { $pull: { salas: idSala } } 
+    );
+}
+
+module.exports = { registrarUsuario, sairSala };

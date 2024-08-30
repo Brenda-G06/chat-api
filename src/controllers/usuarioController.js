@@ -16,10 +16,9 @@ exports.entrar = async (nick) => {
 
 exports.sairSala = async (nick, idSala) => {
     try {
-        // Remover o usuário da sala especificada
+    
         const result = await usuarioModel.sairSala(nick, idSala);
         if (result.modifiedCount > 0) {
-            // Atualizar a sala para remover mensagens do usuário
             const sala = await salaModel.findAll("salas");
             const salaAtual = sala.find(s => s._id.toString() === idSala);
 
@@ -28,11 +27,11 @@ exports.sairSala = async (nick, idSala) => {
                 await salaModel.atualizarMensagens(salaAtual._id.toString(), salaAtual.msgs);
             }
 
-            return { msg: "Usuário saiu da sala com sucesso" };
+            return { msg: "Usuário removido da sala com sucesso" };
         } else {
             throw new Error("Usuário ou sala não encontrados");
         }
     } catch (error) {
-        throw new Error(`Erro ao sair da sala: ${error.message}`);
+        throw new Error(`Erro ao remover o usuário da sala: ${error.message}`);
     }
 };

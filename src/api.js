@@ -7,7 +7,7 @@ app.use(express.json());
 
 const salaController = require('./controllers/salaController');
 const usuarioController = require('./controllers/usuarioController');
-const token = require('./util/token');
+const token = require('./util/token').default;
 
 
 router.get('/', (req, res) => {

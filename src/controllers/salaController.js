@@ -68,7 +68,7 @@ exports.sairSala = async (nick, idSala) => {
 
     if (sala.msgs) {
         sala.msgs = sala.msgs.filter(msg => msg.nick !== nick);
-        await salaModel.atualizarMensagens(sala._id, sala.msgs); /
+        await salaModel.atualizarMensagens(sala._id, sala.msgs); 
     }
 
     return { msg: "Usuário saiu da sala", sala: sala.nome };
